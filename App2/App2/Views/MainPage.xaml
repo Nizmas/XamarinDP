@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Image Source="DPico.png" 
+                   HeightRequest="70"
+                   WidthRequest="70"
+                   HorizontalOptions="Center"/>
+        </Frame>
+        
+        <Label x:Name="LabelEnterDp" 
+               Text="Вход в Датаплат" 
+               FontSize="Title" 
+               Padding="30,10,30,10"
+               HorizontalOptions="Center"/>
+        
+        <StackLayout x:Name="signIn"
+                      Padding="70,10,70,10">
+            <Entry Text="{Binding Login}" FontSize="Medium" Placeholder="Логин"/>
+            <Entry Text="{Binding Password}" FontSize="Medium" Placeholder="Пароль"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Войти" Command="{Binding SignInCommand}" CommandParameter="{Binding}" />
+        </StackLayout>
+        <ActivityIndicator x:Name="signInLoader"
+                           IsRunning="false" />
+    </StackLayout>
+
+</ContentPage>
